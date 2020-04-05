@@ -1,0 +1,12 @@
+// 判断是否启用aplayer
+if theme.aplayer && theme.aplayer.enable
+    //- link(rel="stylesheet" type='text/css', href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css")
+    //- script(type='text/javascript', src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+    //- script(type='text/javascript', src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js")
+    each item in theme.aplayer.css
+        link(rel='stylesheet', href=item)
+    each item in theme.aplayer.js
+        script(src=item)
+    .aplayer(data-id=theme.aplayer.id data-server=theme.aplayer.server data-type=theme.aplayer.type 
+        data-fixed=theme.aplayer.fixed data-mini=theme.aplayer.mini data-order=theme.aplayer.order 
+        data-preload=theme.aplayer.preload data-listFolded=theme.aplayer.listFolded style={width: '300px' , margin:'10px auto 0 auto'})
